@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Khata Book - Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <p><a href="/add_entry">Add Khata Entry</a></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Farmer Name</th>
+                <th>Crop Kind</th>
+                <th>Locality</th>
+                <th>Farm Area (Hectares)</th>
+                <th>Billed Amount</th>
+                <th>Date of Activity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.farmer_name }}</td>
+                    <td>{{ entry.crop_kind }}</td>
+                    <td>{{ entry.locality }}</td>
+                    <td>{{ entry.farm_area }}</td>
+                    <td>{{ entry.billed_amount }}</td>
+                    <td>{{ entry.date_of_activity.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                    <td>
+                        <a href="/edit_entry/{{ entry.id }}">Edit</a> |
+                        <form method="POST" action="/delete_entry/{{ entry.id }}" style="display: inline;">
+                            <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                        </form> |
+                        <a href="/mark_payment/{{ entry.id }}">Mark Payment</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Billed Total: {{ billed_total }}</p>
+    <p>Payments Total: {{ payments_total }}</p>
+</body>
+</html>

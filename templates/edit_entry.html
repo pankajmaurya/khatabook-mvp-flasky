@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Khata Book - Edit Entry</title>
+</head>
+<body>
+    <h1>Edit Khata Entry</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="POST" action="/edit_entry/{{ entry.id }}">
+        <label for="farmer_name">Farmer Name:</label>
+        <input type="text" id="farmer_name" name="farmer_name" value="{{ entry.farmer_name }}" required><br><br>
+        <label for="crop_kind">Crop Kind:</label>
+        <input type="text" id="crop_kind" name="crop_kind" value="{{ entry.crop_kind }}" required><br><br>
+        <label for="locality">Locality:</label>
+        <input type="text" id="locality" name="locality" value="{{ entry.locality }}" required><br><br>
+        <label for="farm_area">Farm Area (Hectares):</label>
+        <input type="number" id="farm_area" name="farm_area" step="0.01" value="{{ entry.farm_area }}" required><br><br>
+        <label for="billed_amount">Billed Amount:</label>
+        <input type="number" id="billed_amount" name="billed_amount" step="0.01" value="{{ entry.billed_amount }}" required><br><br>
+        <input type="submit" value="Update Entry">
+    </form>
+</body>
+</html>
