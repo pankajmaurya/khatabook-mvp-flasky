@@ -4,7 +4,10 @@
     <title>Khata Book - Dashboard</title>
 </head>
 <body>
-    <h1>Dashboard</h1>
+    <h1>Apka Khata</h1>
+    <h1>Welcome, {{ name }}</h1>
+    <p>Your user ID: {{ user_id }}</p>
+    <p><a href="/logout">Logout</a></p>
     <p><a href="/add_entry">Add Khata Entry</a></p>
     <table>
         <thead>
@@ -40,5 +43,6 @@
     </table>
     <p>Billed Total: {{ billed_total }}</p>
     <p>Payments Total: {{ payments_total }}</p>
+    <p>Balance: {{ balance }}</p>
 </body>
 </html>
