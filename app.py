@@ -132,9 +132,10 @@ def add_entry():
         locality = request.form.get('locality')
         farm_area = float(request.form.get('farm_area'))
         billed_amount = float(request.form.get('billed_amount'))
+        date_of_activity = datetime.strptime(request.form.get('date_of_activity'), '%Y-%m-%d')
 
         entry = KhataEntry(lender_id=lender_id, farmer_name=farmer_name, crop_kind=crop_kind, locality=locality, farm_area=farm_area,
-                           billed_amount=billed_amount)
+                           billed_amount=billed_amount, date_of_activity=date_of_activity)
         db.session.add(entry)
         db.session.commit()
         flash('Khata entry added successfully.')

@@ -3,24 +3,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Register</title>
+    <title>नया अकाउंट</title>
 </head>
 <body>
-    <h1>Register</h1>
+    <h1>नया अकाउंट बनाएं</h1>
 
     <form action="{{ url_for('register') }}" method="POST">
-        <label for="phone_number">phone_number:</label>
+        <label for="phone_number">फ़ोन नंबर (Phone Number):</label>
         <input type="text" id="phone_number" name="phone_number" required>
         <br><br>
 
-        <label for="name">name:</label>
+        <label for="name">आपका नाम (Name):</label>
         <input type="text" id="name" name="name" required>
         <br><br>
 
-        <label for="password">Password:</label>
+        <label for="password">पासवर्ड या गुप्तशब्द (Password):</label>
         <input type="password" id="password" name="password" required>
         <br><br>
-        <input type="submit" value="Register">
+        <input type="submit" value="अकाउंट बनाएं (Register)">
     </form>
 </body>
 </html>

@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Khata Book - Login</title>
+    <title>ट्रैक्टर खाता लॉगिन</title>
 </head>
 <body>
-    <h1>Login</h1>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul>
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
+    <h1>अपने ट्रैक्टर खाता में लॉगिन करें</h1>
 
     <form action="{{ url_for('login') }}" method="POST">
-        <label for="phone_number">phone_number:</label>
+        <label for="phone_number">फ़ोन नंबर (Phone Number):</label>
         <input type="text" id="phone_number" name="phone_number" required>
-        <label for="password">Password:</label>
+        <br/>
+        <label for="password">पासवर्ड (Password):</label>
         <input type="password" id="password" name="password" required>
         <br><br>
         <input type="submit" value="Login">

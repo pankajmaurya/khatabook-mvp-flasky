@@ -4,21 +4,20 @@
     <title>Khata Book - Dashboard</title>
 </head>
 <body>
-    <h1>Apka Khata</h1>
-    <h1>Welcome, {{ name }}</h1>
-    <p>Your user ID: {{ user_id }}</p>
-    <p><a href="/logout">Logout</a></p>
-    <p><a href="/add_entry">Add Khata Entry</a></p>
+    <h1>आपका खाता</h1>
+    <h1>स्वागत है, {{ name }}</h1>
+    <p><a href="/logout">लॉगआउट</a></p>
+    <p><a href="/add_entry">खाता लिखें</a></p>
     <table>
         <thead>
             <tr>
-                <th>Farmer Name</th>
-                <th>Crop Kind</th>
-                <th>Locality</th>
-                <th>Farm Area (Hectares)</th>
-                <th>Billed Amount</th>
-                <th>Date of Activity</th>
-                <th>Actions</th>
+                <th>किसान का नाम</th>
+                <th>फसल</th>
+                <th>खेत की जगह</th>
+                <th>खेत की ज़मीन (बीघा में)</th>
+                <th>कीमत</th>
+                <th>काम की तारीख</th>
+                <th>खाता बदलें</th>
             </tr>
         </thead>
         <tbody>
@@ -41,8 +40,8 @@
             {% endfor %}
         </tbody>
     </table>
-    <p>Billed Total: {{ billed_total }}</p>
-    <p>Payments Total: {{ payments_total }}</p>
-    <p>Balance: {{ balance }}</p>
+    <p>कुल बिल (Billed Total): {{ billed_total }}</p>
+    <p>कुल भुगतान (Payments Total): {{ payments_total }}</p>
+    <p>बक़ाया (Balance): {{ balance }}</p>
 </body>
 </html>
