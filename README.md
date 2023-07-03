@@ -1,4 +1,4 @@
-# khatabook-mvp-flasky
+# khatabook-mvp based on Flask
 
 To wipe off previous db:
 ```
@@ -12,3 +12,4 @@ flask db migrate -m "init db"
 flask db upgrade
 flask --app app run
 ```
+
