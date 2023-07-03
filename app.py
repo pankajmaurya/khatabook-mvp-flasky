@@ -157,6 +157,7 @@ def edit_entry(entry_id):
         entry.locality = request.form.get('locality')
         entry.farm_area = float(request.form.get('farm_area'))
         entry.billed_amount = float(request.form.get('billed_amount'))
+        entry.date_of_activity = datetime.strptime(request.form.get('date_of_activity'), '%Y-%m-%d')
 
         db.session.commit()
         flash('Khata entry updated successfully.')

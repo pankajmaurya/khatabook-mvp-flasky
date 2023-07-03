@@ -28,7 +28,7 @@
                     <td>{{ entry.locality }}</td>
                     <td>{{ entry.farm_area }}</td>
                     <td>{{ entry.billed_amount }}</td>
-                    <td>{{ entry.date_of_activity.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                    <td>{{ entry.date_of_activity.strftime('%Y-%m-%d') }}</td>
                     <td>
                         <a href="/edit_entry/{{ entry.id }}">Edit</a> |
                         <form method="POST" action="/delete_entry/{{ entry.id }}" style="display: inline;">
