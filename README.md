@@ -13,3 +13,11 @@ flask db upgrade
 flask --app app run
 ```
 
+## Things to do when going live with something like this
+
+* Figure out how to make this mobile devices friendly
+* Do a security assessment
+* Establish data governance (take backup periodically)
+* Write a runbook for debugging issues like internal server errors (where are logs? Will there be any metrics?)
+* Perhaps restructure this into blueprints and add manage.py to allow running a shell and doing db operations. Will improve support ability to fix things.
+
