@@ -40,11 +40,11 @@
                         <td>{{ entry.billed_amount }}</td>
                         <td>{{ entry.date_of_activity.strftime('%Y-%m-%d') }}</td>
                         <td>
-                            <a href="/edit_entry/{{ entry.id }}">Edit</a> |
+                            <a href="/edit_entry/{{ entry.id }}">संशोधन(Edit)</a> |
+                            <a href="/mark_payment/{{ entry.id }}">भुगतान जोड़ें </a> |
                             <form method="POST" action="/delete_entry/{{ entry.id }}" style="display: inline;">
-                                <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
-                            </form> |
-                            <a href="/mark_payment/{{ entry.id }}">Mark Payment</a>
+                                <button type="submit" onclick="return confirm('क्या सच में मिटाना चाहते हैं? (Are you sure?)')">मिटा दें (सावधान)</button>
+                            </form>
                         </td>
                     </tr>
                 {% endfor %}

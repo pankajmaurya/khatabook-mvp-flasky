@@ -44,7 +44,7 @@
 
             <div class="mb-3">
                 <label for="date_of_activity" class="form-label">काम की तारीख (Date of Activity):</label>
-                <input type="date" id="date_of_activity" name="date_of_activity" class="form-control" required>
+                <input type="date" id="date_of_activity" name="date_of_activity" value="{{ entry.date_of_activity.strftime('%Y-%m-%d') }}" class="form-control" required>
             </div>
 
             <div class="text-center">
