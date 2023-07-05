@@ -219,6 +219,23 @@ def register():
         return redirect(url_for('dashboard'))
     else:
         return render_template('register.html')
+
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+    if request.method == 'POST':
+        phone_number = request.form['phone_number']
+        secret = request.form['secret']
+        password = request.form.get('password')
+
+        existing_user = User.query.filter_by(phone_number=phone_number).first()
+        if not existing_user or secret != '8800169059':
+            return render_template('error.html', error_message='Invalid phone number or secret')
+        
+        existing_user.password = password  # Set the password (hashing is done automatically)
+        db.session.commit()
+        return render_template('login.html')
+    else:
+        return render_template('admin.html')        
     
 if __name__ == '__main__':
     db.create_all()
