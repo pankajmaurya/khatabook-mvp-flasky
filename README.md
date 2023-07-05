@@ -23,3 +23,6 @@ flask --app app run
 
 ## Testing locally
 The db is already pushed with one test account : <8800.....9> / foo
+
+## Tools
+https://www.easyhindityping.com/
