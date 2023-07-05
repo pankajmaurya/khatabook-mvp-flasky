@@ -15,7 +15,7 @@ flask --app app run
 
 ## Things to do when going live with something like this
 
-* Figure out how to make this mobile devices friendly
+* Figure out how to make this mobile devices friendly (DONE)
 * Do a security assessment
 * Establish data governance (take backup periodically)
 * Write a runbook for debugging issues like internal server errors (where are logs? Will there be any metrics?)
