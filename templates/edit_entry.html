@@ -2,30 +2,56 @@
 <html>
 <head>
     <title>खाता संशोधित करें</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 100%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>खाता संशोधित करें (Edit Khata Entry)</h1>
-    <form method="POST" action="/edit_entry/{{ entry.id }}">
+    <div class="container">
+        <h1 class="text-center">खाता संशोधित करें (Edit Khata Entry)</h1>
+        <form method="POST" action="/edit_entry/{{ entry.id }}">
 
-        <label for="farmer_name">किसान का नाम (Farmer Name):</label>
-        <input type="text" id="farmer_name" name="farmer_name" value="{{ entry.farmer_name }}" required><br><br>
+            <div class="mb-3">
+                <label for="farmer_name" class="form-label">किसान का नाम (Farmer Name):</label>
+                <input type="text" id="farmer_name" name="farmer_name" value="{{ entry.farmer_name }}" class="form-control" required>
+            </div>
 
-        <label for="crop_kind">फसल (Crop Kind):</label>
-        <input type="text" id="crop_kind" name="crop_kind" value="{{ entry.crop_kind }}" required><br><br>
+            <div class="mb-3">
+                <label for="crop_kind" class="form-label">फसल (Crop Kind):</label>
+                <input type="text" id="crop_kind" name="crop_kind" value="{{ entry.crop_kind }}" class="form-control" required>
+            </div>
 
-        <label for="locality">खेत की जगह (Locality):</label>
-        <input type="text" id="locality" name="locality" value="{{ entry.locality }}" required><br><br>
-        
-        <label for="farm_area">खेत की ज़मीन (बीघा में) (Farm Area):</label>
-        <input type="number" id="farm_area" name="farm_area" step="0.25" value="{{ entry.farm_area }}" required><br><br>
-        
-        <label for="billed_amount">कीमत (Billed Amount):</label>
-        <input type="number" id="billed_amount" name="billed_amount" step="10" value="{{ entry.billed_amount }}" required><br><br>
-        
-        <label for="date_of_activity">काम की तारीख (Date of Activity):</label>
-        <input type="date" id="date_of_activity" name="date_of_activity" required><br><br>
+            <div class="mb-3">
+                <label for="locality" class="form-label">खेत की जगह (Locality):</label>
+                <input type="text" id="locality" name="locality" value="{{ entry.locality }}" class="form-control" required>
+            </div>
 
-        <input type="submit" value="संशोधित करें (Update Entry)">
-    </form>
+            <div class="mb-3">
+                <label for="farm_area" class="form-label">खेत की ज़मीन (बीघा में) (Farm Area):</label>
+                <input type="number" id="farm_area" name="farm_area" step="0.25" value="{{ entry.farm_area }}" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="billed_amount" class="form-label">कीमत (Billed Amount):</label>
+                <input type="number" id="billed_amount" name="billed_amount" step="10" value="{{ entry.billed_amount }}" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="date_of_activity" class="form-label">काम की तारीख (Date of Activity):</label>
+                <input type="date" id="date_of_activity" name="date_of_activity" class="form-control" required>
+            </div>
+
+            <div class="text-center">
+                <input type="submit" value="संशोधित करें (Update Entry)" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>    
 </body>
 </html>

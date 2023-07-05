@@ -2,15 +2,33 @@
 <html>
 <head>
     <title>Khata Book - Mark Payment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 100%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Mark Payment</h1>
-    <form method="POST" action="/mark_payment/{{ entry.id }}">
-        <label for="amount">Payment Amount:</label>
-        <input type="number" id="amount" name="amount" step="0.01" required><br><br>
-        <label for="notes">Notes:</label>
-        <textarea id="notes" name="notes" rows="4" cols="50"></textarea><br><br>
-        <input type="submit" value="Mark Payment">
-    </form>
+    <div class="container">
+        <h1 class="text-center">Mark Payment</h1>
+        <form method="POST" action="/mark_payment/{{ entry.id }}">
+            <div class="mb-3">
+                <label for="amount" class="form-label">Payment Amount:</label>
+                <input type="number" id="amount" name="amount" step="0.01" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="notes" class="form-label">Notes:</label>
+                <textarea id="notes" name="notes" rows="4" cols="50" class="form-control"></textarea>
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Mark Payment" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>    
 </body>
 </html>

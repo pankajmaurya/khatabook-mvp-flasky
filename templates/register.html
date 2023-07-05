@@ -4,23 +4,37 @@
 <html>
 <head>
     <title>नया अकाउंट</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 100%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>नया अकाउंट बनाएं</h1>
+    <div class="container">
+        <h1 class="text-center">नया अकाउंट बनाएं</h1>
 
-    <form action="{{ url_for('register') }}" method="POST">
-        <label for="phone_number">फ़ोन नंबर (Phone Number):</label>
-        <input type="text" id="phone_number" name="phone_number" required>
-        <br><br>
-
-        <label for="name">आपका नाम (Name):</label>
-        <input type="text" id="name" name="name" required>
-        <br><br>
-
-        <label for="password">पासवर्ड या गुप्तशब्द (Password):</label>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-        <input type="submit" value="अकाउंट बनाएं (Register)">
-    </form>
+        <form action="{{ url_for('register') }}" method="POST">
+            <div class="mb-3">
+                <label for="phone_number" class="form-label">फ़ोन नंबर (Phone Number):</label>
+                <input type="text" id="phone_number" name="phone_number" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">आपका नाम (Name):</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">पासवर्ड या गुप्तशब्द (Password):</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <div class="text-center">
+                <input type="submit" value="अकाउंट बनाएं (Register)" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
 </body>
 </html>

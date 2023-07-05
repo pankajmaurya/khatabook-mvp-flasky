@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Khata Book - Dashboard</title>
+    <title>ट्रैक्टर खाता - Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 100%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>आपका खाता</h1>
-    <h1>स्वागत है, {{ name }}</h1>
-    <p><a href="/logout">लॉगआउट</a></p>
-    <p><a href="/add_entry">खाता लिखें</a></p>
-    <table>
-        <thead>
-            <tr>
-                <th>किसान का नाम</th>
-                <th>फसल</th>
-                <th>खेत की जगह</th>
-                <th>खेत की ज़मीन (बीघा में)</th>
-                <th>कीमत</th>
-                <th>काम की तारीख</th>
-                <th>खाता बदलें</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for entry in entries %}
+    <div class="container">
+        <h1 class="text-center">आपका खाता</h1>
+        <h2 class="text-center">स्वागत है, {{ name }}</h2>
+        <p class="text-center"><a href="/logout">लॉगआउट</a></p>
+        <p class="text-center"><a href="/add_entry">खाता लिखें</a></p>
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>{{ entry.farmer_name }}</td>
-                    <td>{{ entry.crop_kind }}</td>
-                    <td>{{ entry.locality }}</td>
-                    <td>{{ entry.farm_area }}</td>
-                    <td>{{ entry.billed_amount }}</td>
-                    <td>{{ entry.date_of_activity.strftime('%Y-%m-%d') }}</td>
-                    <td>
-                        <a href="/edit_entry/{{ entry.id }}">Edit</a> |
-                        <form method="POST" action="/delete_entry/{{ entry.id }}" style="display: inline;">
-                            <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
-                        </form> |
-                        <a href="/mark_payment/{{ entry.id }}">Mark Payment</a>
-                    </td>
+                    <th>किसान का नाम</th>
+                    <th>फसल</th>
+                    <th>खेत की जगह</th>
+                    <th>खेत की ज़मीन (बीघा में)</th>
+                    <th>कीमत</th>
+                    <th>काम की तारीख</th>
+                    <th>खाता बदलें</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <p>कुल बिल (Billed Total): {{ billed_total }}</p>
-    <p>कुल भुगतान (Payments Total): {{ payments_total }}</p>
-    <p>बक़ाया (Balance): {{ balance }}</p>
-</body>
+            </thead>
+            <tbody>
+                {% for entry in entries %}
+                    <tr>
+                        <td>{{ entry.farmer_name }}</td>
+                        <td>{{ entry.crop_kind }}</td>
+                        <td>{{ entry.locality }}</td>
+                        <td>{{ entry.farm_area }}</td>
+                        <td>{{ entry.billed_amount }}</td>
+                        <td>{{ entry.date_of_activity.strftime('%Y-%m-%d') }}</td>
+                        <td>
+                            <a href="/edit_entry/{{ entry.id }}">Edit</a> |
+                            <form method="POST" action="/delete_entry/{{ entry.id }}" style="display: inline;">
+                                <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                            </form> |
+                            <a href="/mark_payment/{{ entry.id }}">Mark Payment</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p class="text-center">कुल बिल (Billed Total): {{ billed_total }}</p>
+        <p class="text-center">कुल भुगतान (Payments Total): {{ payments_total }}</p>
+        <p class="text-center">बक़ाया (Balance): {{ balance }}</p>
+    </div>
+    </body>
 </html>
