@@ -2,31 +2,32 @@
 <html>
 <head>
     <title>ट्रैक्टर खाता लॉगिन</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
     <style>
         .container {
             max-width: 400px;
-            margin-top: 200px;
-            max-height: 400px;
+            margin-top: 50px;
+            margin-bottom: 50px;
         }
     </style>
 </head>
 <body>
     <div class="container">
 
-        <h1>अपने ट्रैक्टर खाता में लॉगिन करें</h1>
+        <h1 class="text-center">अपने ट्रैक्टर खाता में लॉगिन करें</h1>
 
         <form action="{{ url_for('login') }}" method="POST">
             <div class="mb-3">
                 <label for="phone_number">फ़ोन नंबर (Phone Number):</label>
-                <input type="text" id="phone_number" name="phone_number" required>        
+                <input type="text" id="phone_number" name="phone_number" class="form-control" required>        
             </div>
             <div class="mb-3">
                 <label for="password">पासवर्ड (Password):</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" class="form-control" required>
             </div>
             <br><br>
-            <input type="submit" value="Login">
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
         </form>
 
     </div>
