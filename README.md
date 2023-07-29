@@ -1,3 +1,4 @@
+# An mvp of a tractor lending khata for villagers in North India - written mostly via ChatGPT
 # khatabook-mvp based on Flask
 
 To wipe off previous db:
